@@ -1,6 +1,6 @@
 # Automice
 
-Simulates mouse movements.
+Records and simulates mouse events.
 
 ## install
 
@@ -14,12 +14,12 @@ Record a series of mouse events and save to example.json.
 from automice import MouseListener, run_mouse_events
 
 listener = MouseListener()
-listener.listen(stop_on='scroll')
+listener.listen(stop_after=20, stop_on='scroll')
 listener.save('example.json')
 ```
 
 Load mouse events from example.json and run them.
 
 ```py
-run_mouse_events('example.json')
+run_mouse_events('example.json', safe=False)
 ```
